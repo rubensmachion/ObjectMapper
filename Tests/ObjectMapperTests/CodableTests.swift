@@ -65,13 +65,13 @@ class ImmutableMappableObject: ImmutableMappable {
 	var arrayValue: [CodableModel]?
 	var nilValue: CodableModel?
 	
-	required init(map: Map) throws {
+	required init(map: ObjMap) throws {
 		nilValue = try? map.value("value")
 		value = try? map.value("value", using: CodableTransform<CodableModel>())
 		arrayValue = try? map.value("array_value", using: CodableTransform<[CodableModel]>())
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		nilValue <- map["value"]
 		value	<- (map["value"], using: CodableTransform<CodableModel>())
 		arrayValue <- (map["array_value"], using: CodableTransform<[CodableModel]>())

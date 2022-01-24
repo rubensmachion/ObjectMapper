@@ -282,11 +282,11 @@ class NestedKeys: Mappable {
 	var objectArray: [Object] = []
 	var objectDict: [String: Object] = [:]
 
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		nonNestedString <- map["non.nested.key", nested: false]
 		
 		int64	<- map["nested.int64"]
@@ -323,7 +323,7 @@ class NestedKeys: Mappable {
 }
 
 class DelimiterNestedKeys: NestedKeys {
-	override func mapping(map: Map) {
+	override func mapping(map: ObjMap) {
 		nonNestedString <- map["non.nested->key", nested: false, delimiter: "->"]
 
 		int64   <- map["com.tristanhimmelman.ObjectMapper.nested->com.tristanhimmelman.ObjectMapper.int64", delimiter: "->"]
@@ -362,11 +362,11 @@ class DelimiterNestedKeys: NestedKeys {
 class Object: Mappable, Equatable {
 	var value: Int = Int.min
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		value <- map["value"]
 	}
 }

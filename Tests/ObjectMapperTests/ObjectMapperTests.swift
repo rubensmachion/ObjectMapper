@@ -466,11 +466,11 @@ class ObjectMapperTests: XCTestCase {
 class Status: Mappable {
 	var status: Int?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		status <- map["code"]
 	}
 }
@@ -479,11 +479,11 @@ class Plan: Mappable {
 	var tasks: [Task]?
 	var dictionaryOfTasks: [String: [Task]]?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		tasks <- map["tasks"]
 		dictionaryOfTasks <- map["dictionaryOfTasks"]
 	}
@@ -497,11 +497,11 @@ class Task: Mappable {
 		
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		taskId <- map["taskId"]
 		percentage <- map["percentage"]
 	}
@@ -511,11 +511,11 @@ class TaskDictionary: Mappable {
 	var test: String?
 	var tasks: [String : Task]?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		test <- map["test"]
 		tasks <- map["tasks"]
 	}
@@ -533,11 +533,11 @@ struct Student: Mappable {
 		
 	}
 	
-	init?(map: Map){
+	init?(map: ObjMap){
 		
 	}
 
-	mutating func mapping(map: Map) {
+	mutating func mapping(map: ObjMap) {
 		name <- map["name"]
 		UUID <- map["UUID"]
 		major <- map["major"]
@@ -575,11 +575,11 @@ class User: Mappable {
 		
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		username         <- map["username"]
 		identifier       <- map["identifier"]
 		photoCount       <- map["photoCount"]
@@ -611,11 +611,11 @@ enum ExampleEnum: Int {
 class ExampleEnumArray: Mappable {
 	var enums: [ExampleEnum] = []
 
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		enums <- map["enums"]
 	}
 }
@@ -623,11 +623,11 @@ class ExampleEnumArray: Mappable {
 class ExampleEnumDictionary: Mappable {
 	var enums: [String: ExampleEnum] = [:]
 
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		enums <- map["enums"]
 	}
 }
@@ -636,9 +636,9 @@ class ArrayTest: Mappable {
 	
 	var twoDimensionalArray: Array<Array<Base>>?
 	
-	required init?(map: Map){}
+	required init?(map: ObjMap){}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		twoDimensionalArray <- map["twoDimensionalArray"]
 	}
 }
@@ -649,9 +649,9 @@ class CachedModel: Mappable {
 
 	init() {}
 
-	required init?(map: Map){}
+	required init?(map: ObjMap){}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		name <- map["name"]
 		bigList <- map["bigList"]
 	}
@@ -660,9 +660,9 @@ class CachedModel: Mappable {
 struct CachedItem: Mappable {
 	var name: String?
 
-	init?(map: Map){}
+	init?(map: ObjMap){}
 
-	mutating func mapping(map: Map) {
+	mutating func mapping(map: ObjMap) {
 		name <- map["name"]
 	}
 }

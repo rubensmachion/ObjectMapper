@@ -113,11 +113,11 @@ class Base: Mappable {
 		
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		base <- map["base"]
 	}
 }
@@ -130,11 +130,11 @@ class Subclass: Base {
 		super.init()
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		super.init(map: map)
 	}
 	
-	override func mapping(map: Map) {
+	override func mapping(map: ObjMap) {
 		super.mapping(map: map)
 		
 		sub <- map["sub"]
@@ -150,11 +150,11 @@ class GenericSubclass<T>: Base {
 		super.init()
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		super.init(map: map)
 	}
 	
-	override func mapping(map: Map) {
+	override func mapping(map: ObjMap) {
 		super.mapping(map: map)
 		
 		sub <- map["sub"]
@@ -164,11 +164,11 @@ class GenericSubclass<T>: Base {
 class WithGenericArray<T: Mappable>: Mappable {
 	var genericItems: [T]?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		genericItems <- map["genericItems"]
 	}
 }
@@ -176,17 +176,17 @@ class WithGenericArray<T: Mappable>: Mappable {
 class ConcreteItem: Mappable {
 	var value: String?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		value <- map["value"]
 	}
 }
 
 class SubclassWithGenericArrayInSuperclass<Unused>: WithGenericArray<ConcreteItem> {
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		super.init(map: map)
 	}
 }
@@ -194,11 +194,11 @@ class SubclassWithGenericArrayInSuperclass<Unused>: WithGenericArray<ConcreteIte
 class Response<T: Mappable>: Mappable {
 	var result: T?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		result <- map["result"]
 	}
 }

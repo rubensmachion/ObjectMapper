@@ -59,12 +59,12 @@ class DictionaryTransformTestsObject: Mappable {
 	
 	var dictionary: [MyKey: MyValue] = [:]
 	
-	required init?(map: Map) {
+	required init?(map: ObjMap) {
 
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		
 		self.dictionary <- (map["dictionary"], DictionaryTransform<MyKey, MyValue>())
 	}
@@ -87,7 +87,7 @@ extension DictionaryTransformTestsObject {
 		var foo: String
 		var bar: Int
 		
-		required init?(map: Map) {
+		required init?(map: ObjMap) {
 			
 			self.foo = "__foo"
 			self.bar = self.foo.hash
@@ -100,7 +100,7 @@ extension DictionaryTransformTestsObject {
 			}
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			
 			self.foo <- map["foo"]
 			self.bar <- map["bar"]

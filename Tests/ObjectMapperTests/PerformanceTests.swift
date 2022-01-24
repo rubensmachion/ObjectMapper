@@ -88,11 +88,11 @@ class PerformanceMappableObject: Mappable {
 	var object: PerformanceMappableObject?
 	var objects: [PerformanceMappableObject]?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		string		<- map["string"]
 		int			<- map["int"]
 		double		<- map["double"]
@@ -117,11 +117,11 @@ class PerformanceStaticMappableObject: StaticMappable {
 	var object: PerformanceStaticMappableObject?
 	var objects: [PerformanceStaticMappableObject]?
 	
-	static func objectForMapping(map: Map) -> BaseMappable? {
+	static func objectForMapping(map: ObjMap) -> BaseMappable? {
 		return PerformanceStaticMappableObject()
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		string		<- map["string"]
 		int			<- map["int"]
 		double		<- map["double"]
@@ -146,7 +146,7 @@ class PerformanceImmutableMappableObject: ImmutableMappable {
 	let object: PerformanceImmutableMappableObject?
 	let objects: [PerformanceImmutableMappableObject]?
 
-	required init(map: Map) throws {
+	required init(map: ObjMap) throws {
 		string = try map.value("string")
 		int = try map.value("int")
 		double = try map.value("double")
@@ -158,7 +158,7 @@ class PerformanceImmutableMappableObject: ImmutableMappable {
 		objects = try map.value("objects")
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		string		>>> map["string"]
 		int			>>> map["int"]
 		double		>>> map["double"]

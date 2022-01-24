@@ -68,11 +68,11 @@ class IgnoreNilTests: XCTestCase {
 		
 		init(){}
 		
-		required init?(map: Map){
+		required init?(map: ObjMap){
 			
 		}
 		
-		func mapping(map: Map){
+		func mapping(map: ObjMap){
 			name <- map["name", ignoreNil: true]
 		}
 	}

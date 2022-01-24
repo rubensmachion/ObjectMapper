@@ -309,15 +309,15 @@ class ImmutableObjectTests: XCTestCase {
 	func testAsPropertyOfMappable() {
 		struct ImmutableObject: ImmutableMappable {
 			let value: String
-			init(map: Map) throws {
+			init(map: ObjMap) throws {
 				self.value = try map.value("value")
 			}
 		}
 		
 		struct Object: Mappable {
 			var immutable: ImmutableObject!
-			init?(map: Map) {}
-			mutating func mapping(map: Map) {
+			init?(map: ObjMap) {}
+			mutating func mapping(map: ObjMap) {
 				self.immutable <- map["immutable"]
 			}
 		}
@@ -334,7 +334,7 @@ class ImmutableObjectTests: XCTestCase {
 	func testAsPropertyOfOptionalImmutableMappable() {
 		struct ImmutableObject: ImmutableMappable {
 			let value: String?
-			init(map: Map) throws {
+			init(map: ObjMap) throws {
 				self.value = try map.value("value")
 			}
 		}
@@ -345,7 +345,7 @@ class ImmutableObjectTests: XCTestCase {
 		struct Object: ImmutableMappable {
 			let immutable: ImmutableObject?
 			let enumValue: RawRepresentableEnum?
-			init(map: Map) throws {
+			init(map: ObjMap) throws {
 				self.immutable = try map.value("immutable")
 				self.enumValue = try map.value("enum")
 			}
@@ -446,7 +446,7 @@ struct Struct {
 }
 
 extension Struct: ImmutableMappable {
-	init(map: Map) throws {
+	init(map: ObjMap) throws {
 		prop1 = try map.value("prop1")
 		prop2 = try map.value("prop2")
 		prop3 = try map.value("prop3")
@@ -517,7 +517,7 @@ extension Struct: ImmutableMappable {
 		delimiterNestedDictionary = try map.value("com.tristanhimmelman.ObjectMapper.nested->dictionary", delimiter: "->")
 	}
 
-	mutating func mapping(map: Map) {
+	mutating func mapping(map: ObjMap) {
 		prop1 >>> map["prop1"]
 		prop2 >>> map["prop2"]
 		prop3 >>> map["prop3"]

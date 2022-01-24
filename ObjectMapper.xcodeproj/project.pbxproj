@@ -80,7 +80,7 @@
 		6AC458191BA350CF00054758 /* ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AAC8F7B19F03C2900E7A677 /* ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AC53CAB1F031B85008BDDCD /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030114A81D95187600FBFD4F /* ImmutableMappable.swift */; };
 		6AC53CAC1F03FA1B008BDDCD /* ImmutableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030114AA1D95197100FBFD4F /* ImmutableTests.swift */; };
-		6AC692341BE3FD3A004C119A /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* Map.swift */; };
+		6AC692341BE3FD3A004C119A /* ObjMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* ObjMap.swift */; };
 		6AC692351BE3FD3A004C119A /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC8FC419F048FE00E7A677 /* Mapper.swift */; };
 		6AC692361BE3FD3A004C119A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC8FC519F048FE00E7A677 /* Operators.swift */; };
 		6AC692371BE3FD3A004C119A /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC8FC319F048FE00E7A677 /* FromJSON.swift */; };
@@ -100,9 +100,9 @@
 		6AC692451BE3FD45004C119A /* NestedKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44374C1AAE9C1100A271BA /* NestedKeysTests.swift */; };
 		6AC692461BE3FD45004C119A /* NestedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6100B1BF1BD76A020011114A /* NestedArrayTests.swift */; };
 		6AC692471BE3FD45004C119A /* ObjectMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC8F8519F03C2900E7A677 /* ObjectMapperTests.swift */; };
-		6ACB15D21BC7F1D0006C029C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* Map.swift */; };
-		6ACB15D31BC7F1D0006C029C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* Map.swift */; };
-		6ACB15D41BC7F1D0006C029C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* Map.swift */; };
+		6ACB15D21BC7F1D0006C029C /* ObjMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* ObjMap.swift */; };
+		6ACB15D31BC7F1D0006C029C /* ObjMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* ObjMap.swift */; };
+		6ACB15D41BC7F1D0006C029C /* ObjMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* ObjMap.swift */; };
 		6AECC9E61D79E29100222E7A /* DictionaryTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECC9E51D79E29100222E7A /* DictionaryTransformTests.swift */; };
 		6AECC9E71D79E29100222E7A /* DictionaryTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECC9E51D79E29100222E7A /* DictionaryTransformTests.swift */; };
 		6AECC9E81D79E29100222E7A /* DictionaryTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AECC9E51D79E29100222E7A /* DictionaryTransformTests.swift */; };
@@ -175,7 +175,7 @@
 		CD50B6FD1A82518300744312 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD50B6FC1A82518300744312 /* TransformType.swift */; };
 		CD71C8C11A7218AD009D4161 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD71C8C01A7218AD009D4161 /* TransformOf.swift */; };
 		D86BDEA41A51E5AD00120819 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86BDEA31A51E5AC00120819 /* ISO8601DateTransform.swift */; };
-		DBB9B4232142A2D800078E5A /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* Map.swift */; };
+		DBB9B4232142A2D800078E5A /* ObjMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB15D11BC7F1D0006C029C /* ObjMap.swift */; };
 		DBB9B4242142A2E100078E5A /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF148871D99A25B002BEA2C /* MapError.swift */; };
 		DBB9B4252142A2E100078E5A /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD2C0B1BDDB10D00E6B203 /* Mappable.swift */; };
 		DBB9B4262142A2E100078E5A /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030114A81D95187600FBFD4F /* ImmutableMappable.swift */; };
@@ -288,7 +288,7 @@
 		6AAC8FC519F048FE00E7A677 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Operators.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6AAC8FC719F048FE00E7A677 /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ToJSON.swift; sourceTree = "<group>"; };
 		6AAC8FCB19F048FE00E7A677 /* DateTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransform.swift; sourceTree = "<group>"; };
-		6ACB15D11BC7F1D0006C029C /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		6ACB15D11BC7F1D0006C029C /* ObjMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjMap.swift; sourceTree = "<group>"; };
 		6AECC9E51D79E29100222E7A /* DictionaryTransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTransformTests.swift; path = ObjectMapperTests/DictionaryTransformTests.swift; sourceTree = "<group>"; };
 		6AF148831D999E31002BEA2C /* GenericObjectsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericObjectsTests.swift; path = ObjectMapperTests/GenericObjectsTests.swift; sourceTree = "<group>"; };
 		6AF148871D99A25B002BEA2C /* MapError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 		6AAC8FC219F048FE00E7A677 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				6ACB15D11BC7F1D0006C029C /* Map.swift */,
+				6ACB15D11BC7F1D0006C029C /* ObjMap.swift */,
 				6AF148871D99A25B002BEA2C /* MapError.swift */,
 				3BAD2C0B1BDDB10D00E6B203 /* Mappable.swift */,
 				030114A81D95187600FBFD4F /* ImmutableMappable.swift */,
@@ -835,7 +835,7 @@
 			files = (
 				030E75F71E588BFC0027D94A /* IntegerOperators.swift in Sources */,
 				6AA1F66E1BE991FF006EF513 /* Mappable.swift in Sources */,
-				6AC692341BE3FD3A004C119A /* Map.swift in Sources */,
+				6AC692341BE3FD3A004C119A /* ObjMap.swift in Sources */,
 				6AF148901D99A7A6002BEA2C /* TransformOperators.swift in Sources */,
 				6AC692351BE3FD3A004C119A /* Mapper.swift in Sources */,
 				6AC692361BE3FD3A004C119A /* Operators.swift in Sources */,
@@ -898,7 +898,7 @@
 				3BAD2C0E1BDDB10D00E6B203 /* Mappable.swift in Sources */,
 				6AF1488F1D99A7A6002BEA2C /* TransformOperators.swift in Sources */,
 				6A2AD0461B2C786C0097E150 /* Operators.swift in Sources */,
-				6ACB15D41BC7F1D0006C029C /* Map.swift in Sources */,
+				6ACB15D41BC7F1D0006C029C /* ObjMap.swift in Sources */,
 				84D4F8541CC3B643008B0FB6 /* NSDecimalNumberTransform.swift in Sources */,
 				6A2AD0471B2C786C0097E150 /* FromJSON.swift in Sources */,
 				6AF148941D99A7CA002BEA2C /* EnumOperators.swift in Sources */,
@@ -929,7 +929,7 @@
 				3BAD2C0C1BDDB10D00E6B203 /* Mappable.swift in Sources */,
 				6AF1488D1D99A7A6002BEA2C /* TransformOperators.swift in Sources */,
 				CD50B6FD1A82518300744312 /* TransformType.swift in Sources */,
-				6ACB15D21BC7F1D0006C029C /* Map.swift in Sources */,
+				6ACB15D21BC7F1D0006C029C /* ObjMap.swift in Sources */,
 				84D4F8521CC3B643008B0FB6 /* NSDecimalNumberTransform.swift in Sources */,
 				6AAC8FD319F048FE00E7A677 /* DateTransform.swift in Sources */,
 				6AF148921D99A7CA002BEA2C /* EnumOperators.swift in Sources */,
@@ -993,7 +993,7 @@
 				CD16031E1AC02461000CD69A /* DateFormatterTransform.swift in Sources */,
 				84D4F8531CC3B643008B0FB6 /* NSDecimalNumberTransform.swift in Sources */,
 				6AF148931D99A7CA002BEA2C /* EnumOperators.swift in Sources */,
-				6ACB15D31BC7F1D0006C029C /* Map.swift in Sources */,
+				6ACB15D31BC7F1D0006C029C /* ObjMap.swift in Sources */,
 				997B4A481D3FA20D005E3F31 /* DictionaryTransform.swift in Sources */,
 				CD1603241AC02472000CD69A /* EnumTransform.swift in Sources */,
 				CD16031F1AC02461000CD69A /* ISO8601DateTransform.swift in Sources */,
@@ -1052,7 +1052,7 @@
 				DBB9B4262142A2E100078E5A /* ImmutableMappable.swift in Sources */,
 				DBB9B42F2142A2ED00078E5A /* TransformType.swift in Sources */,
 				DBB9B42D2142A2E600078E5A /* ToJSON.swift in Sources */,
-				DBB9B4232142A2D800078E5A /* Map.swift in Sources */,
+				DBB9B4232142A2D800078E5A /* ObjMap.swift in Sources */,
 				DBB9B4252142A2E100078E5A /* Mappable.swift in Sources */,
 				DBB9B42C2142A2E600078E5A /* FromJSON.swift in Sources */,
 				DBB9B4372142A2F200078E5A /* DateFormatterTransform.swift in Sources */,

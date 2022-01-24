@@ -228,11 +228,11 @@ class Transforms: Mappable {
 		
 	}
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		date				<- (map["date"], DateTransform())
 		dateOpt				<- (map["dateOpt"], DateTransform())
 		

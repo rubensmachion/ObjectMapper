@@ -264,7 +264,7 @@ class MapContextTests: XCTestCase {
 		public let name: String
 
 		/// Define `default` value to use if it is nothing to parse in `name`
-		public init(map: Map) throws {
+		public init(map: ObjMap) throws {
 			name = try map.value("name", default: "Sasha")
 		}
 	}
@@ -282,11 +282,11 @@ class MapContextTests: XCTestCase {
 	class Person: Mappable {
 		var name: String?
 		
-		required init?(map: Map){
+		required init?(map: ObjMap){
 			
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			if (map.context as? Context)?.shouldMap == true {
 				name <- map["name"]
 			}
@@ -296,11 +296,11 @@ class MapContextTests: XCTestCase {
 	class NestedPerson: Mappable {
 		var person: Person?
 		
-		required init?(map: Map){
+		required init?(map: ObjMap){
 			
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			if (map.context as? Context)?.shouldMap == true {
 				person <- map["person"]
 			}
@@ -310,11 +310,11 @@ class MapContextTests: XCTestCase {
 	class PersonList: Mappable {
 		var persons: [Person]?
 		
-		required init?(map: Map){
+		required init?(map: ObjMap){
 			
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			if (map.context as? Context)?.shouldMap == true {
 				persons <- map["persons"]
 			}
@@ -334,7 +334,7 @@ class MapContextTests: XCTestCase {
 		let name: String
 		let isDeveloper: Bool
 		
-		init(map: Map) throws {
+		init(map: ObjMap) throws {
 			guard let context = map.context as? ImmutableContext else {
 				throw ImmutablePersonMappingError.contextAbsense
 			}
@@ -347,7 +347,7 @@ class MapContextTests: XCTestCase {
 	struct ImmutableNestedPerson: ImmutableMappable {
 		let person: ImmutablePerson
 		
-		init(map: Map) throws {
+		init(map: ObjMap) throws {
 			person = try map.value("person")
 		}
 	}
@@ -355,7 +355,7 @@ class MapContextTests: XCTestCase {
 	struct ImmutablePersonList: ImmutableMappable {
 		let persons: [ImmutablePerson]
 		
-		init(map: Map) throws {
+		init(map: ObjMap) throws {
 			persons = try map.value("persons")
 		}
 	}

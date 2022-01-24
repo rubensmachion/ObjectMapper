@@ -81,11 +81,11 @@ class NestedArray: Mappable {
 
 	var nestedObjectValue: Int?
 	
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		
 	}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		value_0	<- map["nested.0.value"]
 		value_1	<- map["nested.1.value"]
 		
@@ -97,9 +97,9 @@ class NestedArray: Mappable {
 class NestedObject: Mappable {
 	var value: Int?
 	
-	required init?(map: Map){}
+	required init?(map: ObjMap){}
 	
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		value	<- map["value"]
 	}
 }

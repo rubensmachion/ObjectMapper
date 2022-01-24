@@ -49,7 +49,7 @@ internal final class FromJSON {
 	#endif
 	
 	/// Mappable object
-	class func object<N: BaseMappable>(_ field: inout N, map: Map) {
+	class func object<N: BaseMappable>(_ field: inout N, map: ObjMap) {
 		if map.toObject {
 			field = Mapper(context: map.context).map(JSONObject: map.currentValue, toObject: field)
 		} else if let value: N = Mapper(context: map.context).map(JSONObject: map.currentValue) {
@@ -59,7 +59,7 @@ internal final class FromJSON {
 	
 	/// Optional Mappable Object
 
-	class func optionalObject<N: BaseMappable>(_ field: inout N?, map: Map) {
+	class func optionalObject<N: BaseMappable>(_ field: inout N?, map: ObjMap) {
 		if let f = field , map.toObject && map.currentValue != nil {
 			 field = Mapper(context: map.context).map(JSONObject: map.currentValue, toObject: f)
 		} else {
@@ -80,7 +80,7 @@ internal final class FromJSON {
 	#endif
 	
 	/// mappable object array
-	class func objectArray<N: BaseMappable>(_ field: inout Array<N>, map: Map) {
+	class func objectArray<N: BaseMappable>(_ field: inout Array<N>, map: ObjMap) {
 		if let objects = Mapper<N>(context: map.context).mapArray(JSONObject: map.currentValue) {
 			field = objects
 		}
@@ -88,7 +88,7 @@ internal final class FromJSON {
 	
 	/// optional mappable object array
 
-	class func optionalObjectArray<N: BaseMappable>(_ field: inout Array<N>?, map: Map) {
+	class func optionalObjectArray<N: BaseMappable>(_ field: inout Array<N>?, map: ObjMap) {
 		if let objects: Array<N> = Mapper(context: map.context).mapArray(JSONObject: map.currentValue) {
 			field = objects
 		} else {
@@ -109,14 +109,14 @@ internal final class FromJSON {
 	#endif
 	
 	/// mappable object array
-	class func twoDimensionalObjectArray<N: BaseMappable>(_ field: inout Array<Array<N>>, map: Map) {
+	class func twoDimensionalObjectArray<N: BaseMappable>(_ field: inout Array<Array<N>>, map: ObjMap) {
 		if let objects = Mapper<N>(context: map.context).mapArrayOfArrays(JSONObject: map.currentValue) {
 			field = objects
 		}
 	}
 	
 	/// optional mappable 2 dimentional object array
-	class func optionalTwoDimensionalObjectArray<N: BaseMappable>(_ field: inout Array<Array<N>>?, map: Map) {
+	class func optionalTwoDimensionalObjectArray<N: BaseMappable>(_ field: inout Array<Array<N>>?, map: ObjMap) {
 		field = Mapper(context: map.context).mapArrayOfArrays(JSONObject: map.currentValue)
 	}
 	
@@ -129,7 +129,7 @@ internal final class FromJSON {
 	#endif
 	
 	/// Dctionary containing Mappable objects
-	class func objectDictionary<N: BaseMappable>(_ field: inout Dictionary<String, N>, map: Map) {
+	class func objectDictionary<N: BaseMappable>(_ field: inout Dictionary<String, N>, map: ObjMap) {
 		if map.toObject {
 			field = Mapper<N>(context: map.context).mapDictionary(JSONObject: map.currentValue, toDictionary: field)
 		} else {
@@ -140,7 +140,7 @@ internal final class FromJSON {
 	}
 	
 	/// Optional dictionary containing Mappable objects
-	class func optionalObjectDictionary<N: BaseMappable>(_ field: inout Dictionary<String, N>?, map: Map) {
+	class func optionalObjectDictionary<N: BaseMappable>(_ field: inout Dictionary<String, N>?, map: ObjMap) {
 		if let f = field , map.toObject && map.currentValue != nil {
 			field = Mapper(context: map.context).mapDictionary(JSONObject: map.currentValue, toDictionary: f)
 		} else {
@@ -161,14 +161,14 @@ internal final class FromJSON {
 	#endif
 	
 	/// Dictionary containing Array of Mappable objects
-	class func objectDictionaryOfArrays<N: BaseMappable>(_ field: inout Dictionary<String, [N]>, map: Map) {
+	class func objectDictionaryOfArrays<N: BaseMappable>(_ field: inout Dictionary<String, [N]>, map: ObjMap) {
 		if let objects = Mapper<N>(context: map.context).mapDictionaryOfArrays(JSONObject: map.currentValue) {
 			field = objects
 		}
 	}
 	
 	/// Optional Dictionary containing Array of Mappable objects
-	class func optionalObjectDictionaryOfArrays<N: BaseMappable>(_ field: inout Dictionary<String, [N]>?, map: Map) {
+	class func optionalObjectDictionaryOfArrays<N: BaseMappable>(_ field: inout Dictionary<String, [N]>?, map: ObjMap) {
 		field = Mapper<N>(context: map.context).mapDictionaryOfArrays(JSONObject: map.currentValue)
 	}
 	
@@ -181,14 +181,14 @@ internal final class FromJSON {
 	#endif
 	
 	/// mappable object Set
-	class func objectSet<N: BaseMappable>(_ field: inout Set<N>, map: Map) {
+	class func objectSet<N: BaseMappable>(_ field: inout Set<N>, map: ObjMap) {
 		if let objects = Mapper<N>(context: map.context).mapSet(JSONObject: map.currentValue) {
 			field = objects
 		}
 	}
 	
 	/// optional mappable object array
-	class func optionalObjectSet<N: BaseMappable>(_ field: inout Set<N>?, map: Map) {
+	class func optionalObjectSet<N: BaseMappable>(_ field: inout Set<N>?, map: ObjMap) {
 		field = Mapper(context: map.context).mapSet(JSONObject: map.currentValue)
 	}
 	

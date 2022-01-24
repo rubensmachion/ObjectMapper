@@ -39,9 +39,9 @@ struct TestMappable: Mappable, Equatable, Hashable {
 	var value: String?
 	
 	init() {}
-	init?(map: Map) {	}
+	init?(map: ObjMap) {	}
 	
-	mutating func mapping(map: Map) {
+	mutating func mapping(map: ObjMap) {
 		value <- map["value"]
 	}
 	

@@ -136,11 +136,11 @@ class ToObjectTests: XCTestCase {
 		var spouse: Person?
 		var children: [String: Person]?
 		
-		required init?(map: Map) {
+		required init?(map: ObjMap) {
 			
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			name		<- map["name"]
 			spouse		<- map["spouse"]
 			children	<- map["children"]
@@ -155,11 +155,11 @@ class ToObjectTests: XCTestCase {
 			
 		}
 		
-		required init?(map: Map){
+		required init?(map: ObjMap){
 			
 		}
 		
-		func mapping(map: Map) {
+		func mapping(map: ObjMap) {
 			username	<- map["username"]
 		}
 	}
@@ -171,11 +171,11 @@ class ToObjectTests: XCTestCase {
 			self.name = name
 		}
 		
-		init?(map: Map) {
+		init?(map: ObjMap) {
 			
 		}
 		
-		mutating func mapping(map: Map) {
+		mutating func mapping(map: ObjMap) {
 			name <- map["name"]
 		}
 	}
@@ -187,11 +187,11 @@ class ToObjectTests: XCTestCase {
 			info = HumanInfo(name: name)
 		}
 		
-		init?(map: Map) {
+		init?(map: ObjMap) {
 			
 		}
 		
-		mutating func mapping(map: Map) {
+		mutating func mapping(map: ObjMap) {
 			info <- map["info"]
 		}
 	}

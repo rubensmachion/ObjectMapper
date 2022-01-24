@@ -88,11 +88,11 @@ class Player: Mappable  {
 	var age: Int?
 	var address: Address?
 
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		mapping(map: map)
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		firstName <- map["firstName"]
 		lastName <- map["lastName"]
 		team <- map["team"]
@@ -106,11 +106,11 @@ class Address: Mappable {
 	var number: Int?
 	var city: String?
 
-	required init?(map: Map){
+	required init?(map: ObjMap){
 		mapping(map: map)
 	}
 
-	func mapping(map: Map) {
+	func mapping(map: ObjMap) {
 		street <- map["street"]
 		number <- map["number"]
 		city <- map["city"]
